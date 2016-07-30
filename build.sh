@@ -38,10 +38,10 @@ ls $KERNEL_DIR/drivers/staging/prima/wlan.ko
 echo "**** Verifying Anyernel2 Directory ****"
 ls $ANY_KERNEL2_DIR
 echo "**** Removing leftovers ****"
-rm -f $ANY_KERNEL2_DIR/dtb
-rm -f $ANY_KERNEL2_DIR/zImage
-rm -f $ANY_KERNEL2_DIR/modules/wlan.ko
-rm -f $ANY_KERNEL2_DIR/$FINAL_KERNEL_ZIP
+rm -rf $ANY_KERNEL2_DIR/dtb
+rm -rf $ANY_KERNEL2_DIR/zImage
+rm -rf $ANY_KERNEL2_DIR/modules/wlan.ko
+rm -rf $ANY_KERNEL2_DIR/$FINAL_KERNEL_ZIP
 
 echo "**** Copying zImage ****"
 cp $KERNEL_DIR/arch/arm/boot/zImage $ANY_KERNEL2_DIR/
@@ -53,10 +53,11 @@ cp $KERNEL_DIR/drivers/staging/prima/wlan.ko $ANY_KERNEL2_DIR/modules/
 echo "**** Time to zip up! ****"
 cd $ANY_KERNEL2_DIR/
 zip -r9 $FINAL_KERNEL_ZIP * -x README $FINAL_KERNEL_ZIP
-
-echo "**** Here's your zip ****"
-ls $ANY_KERNEL2_DIR/$FINAL_KERNEL_ZIP
+rm -rf /home/shivam/$FINAL_KERNEL_ZIP
+cp /home/shivam/optimus/Anykernel2/$FINAL_KERNEL_ZIP /home/shivam/$FINAL_KERNEL_ZIP
 
 echo "**** Good Bye!! ****"
 cd $KERNEL_DIR
-rm -f arch/arm/boot/dtb
+rm -rf arch/arm/boot/dtb
+git checkout -- Anykernel2/zImage
+git checkout -- Anykernel2/$FINAL_KERNEL_ZIP
