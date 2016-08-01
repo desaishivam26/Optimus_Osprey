@@ -4,6 +4,8 @@
 ### Shivam Desai (shivamdesaixda@gmail.com)
 ### A custom build script to build zImage,DTB & wlan module (Anykernel2 method)
 
+set -e
+
 ## Copy this script inside the kernel directory
 KERNEL_DIR=$PWD
 KERNEL_TOOLCHAIN=/home/shivam/google/bin/arm-linux-androideabi-
