@@ -10,6 +10,13 @@ echo "westwood" > /proc/sys/net/ipv4/tcp_congestion_control
 echo "bfq" > /sys/block/mmcblk0/queue/scheduler
 echo "512" > /sys/block/mmcblk0/bdi/read_ahead_kb
 
+# Interactive Gov
+echo "1" > /sys/devices/system/cpu/cpufreq/interactive/use_sched_load
+echo "1" > /sys/devices/system/cpu/cpufreq/interactive/use_migration_notif
+echo "1" > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+echo "1" > /sys/devices/system/cpu/cpufreq/interactive/ignore_hispeed_on_notif
+echo "40000" > /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+
 # CPU BOOST
 echo "40" > /sys/module/cpu_boost/parameters/input_boost_ms
 echo "1094400" > /sys/module/cpu_boost/parameters/input_boost_freq
