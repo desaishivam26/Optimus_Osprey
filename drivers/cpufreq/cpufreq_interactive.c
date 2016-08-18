@@ -132,10 +132,13 @@ struct cpufreq_interactive_tunables {
 	 */
 #define DEFAULT_TIMER_SLACK (4 * DEFAULT_TIMER_RATE)
 	int timer_slack_val;
+#define DEFAULT_IO_IS_BUSY 1
 	bool io_is_busy;
 
 	/* scheduler input related flags */
+#define DEFAULT_USE_SCHED_LOAD 1
 	bool use_sched_load;
+#define DEFAULT_USE_MIGRATION_NOTIF 1
 	bool use_migration_notif;
 
 	/*
@@ -149,10 +152,12 @@ struct cpufreq_interactive_tunables {
 	 * Stay at max freq for at least max_freq_hysteresis before dropping
 	 * frequency.
 	 */
+        #define DEFAULT_MAX_FREQ_HYSTERESIS 40000
 	unsigned int max_freq_hysteresis;
 
 	/* Ignore hispeed_freq and above_hispeed_delay for notification */
-	bool ignore_hispeed_on_notif;
+	#define DEFAULT_IGNORE_HISPEED_ON_NOTIF 1
+        bool ignore_hispeed_on_notif;
 
 	/* Ignore min_sample_time for notification */
 	bool fast_ramp_down;
@@ -1490,6 +1495,11 @@ static struct cpufreq_interactive_tunables *alloc_tunable(
 	tunables->prev_timer_rate = DEFAULT_TIMER_RATE;
 	tunables->boostpulse_duration_val = DEFAULT_MIN_SAMPLE_TIME;
 	tunables->timer_slack_val = DEFAULT_TIMER_SLACK;
+        tunables->use_sched_load = DEFAULT_USE_SCHED_LOAD;
+        tunables->use_migration_notif = DEFAULT_USE_MIGRATION_NOTIF;
+        tunables->io_is_busy = DEFAULT_IO_IS_BUSY;
+        tunables->max_freq_hysteresis = DEFAULT_MAX_FREQ_HYSTERESIS;
+        tunables->ignore_hispeed_on_notif = DEFAULT_IGNORE_HISPEED_ON_NOTIF;
 
 	spin_lock_init(&tunables->target_loads_lock);
 	spin_lock_init(&tunables->above_hispeed_delay_lock);
