@@ -13,7 +13,7 @@ KERNEL_DEFCONFIG=osprey_defconfig
 DTBTOOL=$KERNEL_DIR/Dtbtool/
 JOBS=8
 ANY_KERNEL2_DIR=$KERNEL_DIR/Anykernel2/
-FINAL_KERNEL_ZIP=Optimus-R14-Osprey.zip
+FINAL_KERNEL_ZIP=Optimus-R15-Osprey.zip
 
 # Clean build always lol
 echo "**** Cleaning ****"
