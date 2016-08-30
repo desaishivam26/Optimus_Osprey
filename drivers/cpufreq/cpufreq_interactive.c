@@ -152,7 +152,7 @@ struct cpufreq_interactive_tunables {
 	 * Stay at max freq for at least max_freq_hysteresis before dropping
 	 * frequency.
 	 */
-        #define DEFAULT_MAX_FREQ_HYSTERESIS 40000
+        #define DEFAULT_MAX_FREQ_HYSTERESIS 60000
 	unsigned int max_freq_hysteresis;
 
 	/* Ignore hispeed_freq and above_hispeed_delay for notification */
