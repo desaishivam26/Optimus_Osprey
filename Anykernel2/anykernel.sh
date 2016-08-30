@@ -180,9 +180,6 @@ dump_boot;
 
 # kernel scripts
 append_file init.rc "optimus" init.optimus.rc;
-backup_file init.target.rc
-replace_line init.target.rc "write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 80" "write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 85";
-replace_line init.target.rc "write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000" "write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000";
 
 # end ramdisk changes
 
