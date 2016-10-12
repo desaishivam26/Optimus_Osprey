@@ -8,12 +8,12 @@ set -e
 
 ## Copy this script inside the kernel directory
 KERNEL_DIR=$PWD
-KERNEL_TOOLCHAIN=/home/shivam/google/bin/arm-linux-androideabi-
+KERNEL_TOOLCHAIN=/home/shivam/arm-eabi-4.8/bin/arm-eabi-
 KERNEL_DEFCONFIG=osprey_defconfig
 DTBTOOL=$KERNEL_DIR/Dtbtool/
 JOBS=8
 ANY_KERNEL2_DIR=$KERNEL_DIR/Anykernel2/
-FINAL_KERNEL_ZIP=Optimus-Osprey-R13.zip
+FINAL_KERNEL_ZIP=Optimus-R16-Osprey.zip
 
 # Clean build always lol
 echo "**** Cleaning ****"
