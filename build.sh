@@ -63,3 +63,5 @@ cd $KERNEL_DIR
 rm -rf arch/arm/boot/dtb
 rm -rf $ANY_KERNEL2_DIR/$FINAL_KERNEL_ZIP
 git checkout -- Anykernel2/zImage
+git checkout -- Anykernel2/dtb
+
