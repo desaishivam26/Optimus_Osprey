@@ -8,7 +8,7 @@ set -e
 
 ## Copy this script inside the kernel directory
 KERNEL_DIR=$PWD
-KERNEL_TOOLCHAIN=/home/shivam/arm-eabi-4.8/bin/arm-eabi-
+KERNEL_TOOLCHAIN=/home/shivam/arm-eabi-5.x/bin/arm-eabi-
 KERNEL_DEFCONFIG=osprey_defconfig
 DTBTOOL=$KERNEL_DIR/Dtbtool/
 JOBS=8
