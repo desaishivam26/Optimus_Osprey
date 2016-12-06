@@ -4730,7 +4730,6 @@ int try_to_unmap_ksm(struct page *page,
 		return SWAP_FAIL;
 
 	if (target_vma) {
-		unsigned long address = vma_address(page, target_vma);
 		ret = try_to_unmap_one(page, target_vma, address, flags);
 		goto out;
 	}
