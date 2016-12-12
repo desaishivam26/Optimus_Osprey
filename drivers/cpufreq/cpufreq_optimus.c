@@ -22,7 +22,8 @@
 #define MAX_SAMPLING_DOWN_FACTOR		(10)
 #define DEF_OPTIMAL_FREQ                        (998400)
 #define DEF_OPTIMAL_THRESHOLD                   (60)
-#define DEFAULT_MIN_LOAD			(5)
+#define DEFAULT_MIN_LOAD			(10)
+#define MICRO_FREQUENCY_MIN_SAMPLE_RATE	        (10000)
 
 static DEFINE_PER_CPU(struct cs_cpu_dbs_info_s, cs_cpu_dbs_info);
 
@@ -348,8 +349,7 @@ static int cs_init(struct dbs_data *dbs_data)
 	tuners->freq_step = DEF_FREQUENCY_STEP;
 
 	dbs_data->tuners = tuners;
-	dbs_data->min_sampling_rate = MIN_SAMPLING_RATE_RATIO *
-		jiffies_to_usecs(10);
+        dbs_data->min_sampling_rate = MICRO_FREQUENCY_MIN_SAMPLE_RATE;
 	mutex_init(&dbs_data->mutex);
 	return 0;
 }
