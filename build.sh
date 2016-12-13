@@ -8,7 +8,7 @@ set -e
 
 ## Copy this script inside the kernel directory
 KERNEL_DIR=$PWD
-KERNEL_TOOLCHAIN=/home/shivam/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+KERNEL_TOOLCHAIN=/home/shivam/arm-linux-androideabi-6.2-linaro/bin/arm-linux-androideabi-
 KERNEL_DEFCONFIG=osprey_defconfig
 DTBTOOL=$KERNEL_DIR/Dtbtool/
 JOBS=8
