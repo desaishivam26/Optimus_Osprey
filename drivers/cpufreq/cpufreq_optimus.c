@@ -24,6 +24,7 @@
 #define DEF_OPTIMAL_THRESHOLD                   (60)
 #define DEFAULT_MIN_LOAD			(10)
 #define MICRO_FREQUENCY_MIN_SAMPLE_RATE	        (10000)
+#define DEF_SAMPLING_RATE                       (50000)
 
 static DEFINE_PER_CPU(struct cs_cpu_dbs_info_s, cs_cpu_dbs_info);
 
@@ -347,6 +348,7 @@ static int cs_init(struct dbs_data *dbs_data)
 	tuners->sampling_down_factor = DEF_SAMPLING_DOWN_FACTOR;
 	tuners->ignore_nice_load = 0;
 	tuners->freq_step = DEF_FREQUENCY_STEP;
+        tuners->sampling_rate = DEF_SAMPLING_RATE;
 
 	dbs_data->tuners = tuners;
         dbs_data->min_sampling_rate = MICRO_FREQUENCY_MIN_SAMPLE_RATE;
