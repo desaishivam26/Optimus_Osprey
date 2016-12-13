@@ -23,4 +23,3 @@ echo "0" > /sys/module/wakeup/parameters/enable_wlan_ctrl_wake_ws
 echo "0" > /sys/module/wakeup/parameters/enable_wlan_wake_ws
 echo "20" > /sys/kernel/mm/uksm/max_cpu_percentage
 echo "0" > /sys/kernel/mm/uksm/run
-echo "50000" >  /sys/devices/system/cpu/cpufreq/optimus/sampling_rate
