@@ -70,7 +70,7 @@ static struct asmp_param_struct {
 #endif
 } asmp_param = {
 	.delay = DEFAULT_UPDATE_RATE,
-	.max_cpus = NR_CPUS,
+	.max_cpus = CONFIG_NR_CPUS,
 	.min_cpus = 2,
 	.cpufreq_up = 95,
 	.cpufreq_down = 80,
@@ -103,8 +103,8 @@ static void max_min_check(void)
 	asmp_param.max_cpus = max((unsigned int)1, asmp_param.max_cpus);
 	asmp_param.min_cpus = max((unsigned int)1, asmp_param.min_cpus);
 
-	if (asmp_param.max_cpus > NR_CPUS)
-		asmp_param.max_cpus = NR_CPUS;
+	if (asmp_param.max_cpus > CONFIG_NR_CPUS)
+		asmp_param.max_cpus = CONFIG_NR_CPUS;
 	if (asmp_param.min_cpus > asmp_param.max_cpus)
 		asmp_param.min_cpus = asmp_param.max_cpus;
 }
@@ -614,7 +614,7 @@ static int __init asmp_init(void)
 {
 	int ret = 0;
 
-	asmp_param.max_cpus = NR_CPUS;
+	asmp_param.max_cpus = CONFIG_NR_CPUS;
 #if DEBUG
 	for_each_possible_cpu(cpu)
 		per_cpu(asmp_cpudata, cpu).times_hotplugged = 0;
