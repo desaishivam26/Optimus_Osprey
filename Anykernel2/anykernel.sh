@@ -34,9 +34,7 @@ chmod -R 755 $ramdisk
 dump_boot;
 
 # begin ramdisk changes
-
-# kernel scripts
-append_file init.rc "optimus" init.optimus.rc;
+insert_line init.qcom.rc "init.optimus.rc" after "import init.target.rc" "import init.optimus.rc";
 
 # Add frandom compatibility
 backup_file ueventd.rc;
