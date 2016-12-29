@@ -139,8 +139,8 @@ void dbs_check_cpu(struct dbs_data *dbs_data, int cpu)
 		 */
 		if (unlikely(wall_time > (2 * sampling_rate) &&
 			     j_cdbs->prev_load)) {
-			load = j_cdbs->prev_load;
                         unsigned int periods = wall_time / sampling_rate;
+			load = j_cdbs->prev_load;
 
 			if (periods < deferred_periods)
 				deferred_periods = periods;
