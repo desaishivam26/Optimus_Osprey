@@ -30,5 +30,3 @@ on property:sys.boot_completed=1
     write /proc/sys/kernel/random/read_wakeup_threshold 128
     write /proc/sys/kernel/random/write_wakeup_threshold 256
 
-    # Set Swappiness
-    write /proc/sys/vm/swappiness 8
