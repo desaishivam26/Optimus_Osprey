@@ -21,6 +21,7 @@
 #include <linux/kernel_stat.h>
 #include <linux/module.h>
 #include <linux/mutex.h>
+#include <linux/err.h>
 
 /*
  * The polling frequency depends on the capability of the processor. Default
