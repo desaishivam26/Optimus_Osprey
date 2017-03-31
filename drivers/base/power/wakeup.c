@@ -14,7 +14,6 @@
 #include <linux/suspend.h>
 #include <linux/seq_file.h>
 #include <linux/debugfs.h>
-#include <linux/display_state.h>
 #include <trace/events/power.h>
 #include <linux/moduleparam.h>
 
